@@ -1,0 +1,30 @@
+<div class="app-component-container">
+  <div>
+    <mat-toolbar data-test="header" color="primary">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" [routerLink]="['']" >
+        <mat-icon >home</mat-icon>
+      </button>
+      <span class="example-spacer"></span>
+      <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" [matMenuTriggerFor]="sortMenu">
+        <mat-icon>sort</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+  <div class="app-component-route-outlet">
+    <router-outlet></router-outlet>
+  </div>
+  <div></div>
+</div>
+
+<mat-menu #sortMenu="matMenu" (click)="$event.preventDefault(); $event.stopPropagation()" >
+  <div class="menu-container">
+    <h2 color="secundary">Sort by</h2>
+    <mat-chip-listbox class="mat-mdc-chip-set-stacked " aria-label="Color selection" (change)="onChange($event)">
+      @for (sortOption of sortingOptions; track sortOption) {
+        <mat-chip-option [value]="sortOption.value"  color="primary">{{sortOption.label}}</mat-chip-option>
+      }
+    </mat-chip-listbox>
+  </div>
+</mat-menu>
+
+

@@ -1,0 +1,6 @@
+<div class="movie-listing-container">
+    <ng-container *ngFor="let movie of movieListingService.computedMovieListing()">
+        <app-movie-thumbnail [movie]="movie"></app-movie-thumbnail>
+    </ng-container>
+    
+</div>

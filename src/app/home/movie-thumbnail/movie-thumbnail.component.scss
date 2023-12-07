@@ -1,0 +1,63 @@
+.movie-thumbnail-container {
+    border-radius: 14px;
+    box-shadow: black 5px 3px 10px 8px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    overflow: hidden;
+    width: 290px;
+    cursor: pointer;
+
+    .movie-thumbnail {
+        display: flex;
+        flex: 4;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 290px;
+        }
+
+        .watchlist-label {
+            position: absolute;
+            top: 8px;
+            left: 15px;
+            padding: 3px 5px;
+            background-color: rgb(66 66 66 / 65%);
+            border-radius: 5px;
+            color: white;
+        }
+
+        .watchlist-button {
+            position: absolute;
+            top: 8px;
+            right: 15px;
+        }
+    }
+
+    .movie-details {
+        background-color: #424242;
+        color: white;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        text-align: center;
+        
+
+        h2 {
+            margin: 0;
+            text-wrap: pretty;
+        }
+
+        .movie-rating-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            mat-icon {
+                color: goldenrod;
+                font-size: 20px;
+            }
+        }
+    }
+}

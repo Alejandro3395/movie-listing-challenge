@@ -1,0 +1,17 @@
+.app-component-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+
+    .app-title {
+        align-self: flex-end;
+    }
+
+    .app-component-route-outlet {
+        flex: auto;
+        overflow: auto;
+    }
+}
+

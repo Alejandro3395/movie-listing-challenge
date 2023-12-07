@@ -1,0 +1,26 @@
+<div class="movie-thumbnail-container" (click)="goToMovieDetails()">
+    <div class="movie-thumbnail">
+        <img src="assets/images/{{movie.thumbnail}}" alt="{{movie.title}}">
+
+        <span class="watchlist-label" *ngIf="isOnWatchList()">On my watchlist</span>
+        @if (isOnWatchList()) {
+            <button mat-icon-button (click)="$event.stopPropagation(); watchlistManagerService.removeMovieFromWatchlist(movie.title);" class="watchlist-button" color="primary" aria-label="Add to watchlistbutton">
+                <mat-icon>favorite</mat-icon>
+            </button>
+        } @else {
+            <button mat-icon-button (click)="$event.stopPropagation(); watchlistManagerService.addMovieToWatchlist(movie.title)" class="watchlist-button" color="primary" aria-label="Add to watchlistbutton">
+                <mat-icon>favorite_border</mat-icon>
+            </button>
+        }
+        
+    </div>
+    <div class="movie-details">
+        <h2>{{movie.title}}</h2>
+        <sub>
+            <ng-container *ngFor="let category of movie.genre; first as isFirst;">
+                {{isFirst ? category : ', ' + category }}
+            </ng-container> | {{movie.durationInMin | formatMovieDuration}} | {{movie.releasedDate | date:'dd/MM/YY'}}
+        </sub>
+        <sub class="movie-rating-label"><mat-icon aria-hidden="false" aria-label="star_rating" fontIcon="star_rating"></mat-icon> <span>{{movie.rating}}</span></sub>
+    </div>
+</div>

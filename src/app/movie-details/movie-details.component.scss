@@ -1,0 +1,74 @@
+.movie-details-container {
+    display: flex;
+    padding: 10px;
+
+    .left-panel, .right-panel {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-panel {
+        flex: 1;
+        gap: 12px;
+
+        .movie-thumbnail {
+            img {
+                box-shadow: 3px 3px 15px 4px;
+                width: 100%;
+            }
+        }
+    }
+
+    .right-panel {
+        flex: 4;
+        color: white;
+        padding: 16px;
+        gap: 12px;
+
+        h1 {
+            font-size: 34px;
+            font-weight: bold;
+            margin: 0;
+
+        }
+
+        .title-section {
+            display: inline;
+        }
+
+        .movie-information-section {
+            padding: 16px 0;
+            .movie-rating-label {
+
+                mat-icon {
+                    vertical-align: middle;
+                    color: goldenrod;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .genre-section {
+            display: flex;;
+            gap: 8px;
+            .genre-item {
+                padding: 5px;
+                background-color: #e91e63;
+                border-radius: 8px;
+            }
+        }
+
+        .description-section {
+            span {
+                text-wrap: pretty;
+                font-style: italic;
+            }
+        }
+
+        .trailer-preview-section {
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+        }
+    }
+}
